@@ -1,0 +1,97 @@
+#welcomeDiv {
+    min-width: 90%;
+    min-height: 100vh;
+    padding: 0 5% 0 5%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    font-weight: 600;
+}
+
+#greetingDiv {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    color: orange;
+    font-size: 6em;
+    font-weight: 800;
+    text-align: end;
+    padding-right: 2.5%;
+    min-width: 50%;
+    min-height: 100vh;
+    align-items: flex-end;
+    justify-content: center;
+    animation: moveInLeft 3s ease-out;
+}
+
+#greetingDiv>div:nth-of-type(even) {
+    font-size: 0.8em;
+}
+
+#welcomeDivInner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.75em;
+    text-align: start;
+    min-width: 50%;
+    padding-left: 2.5%;
+    min-height: 100vh;
+    align-items: flex-start;
+    justify-content: center;
+    animation: moveInRight 3s ease-out;
+}
+
+#welcomeMessDiv>div:nth-of-type(even) {
+    font-size: 0.75em;
+}
+
+#authorDiv {
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.25em;
+    font-weight: 800;
+    /* color: rgb(128, 206, 240); */
+    color: orange;
+}
+
+.enterButton {
+    color: white;
+    text-shadow: 1px 1px 20px orange;
+    font-size: 0.25em;
+}
+
+.enterButton:hover {
+    color: orange;
+    text-shadow: none;
+}
+
+@keyframes moveInLeft {
+    0% {
+        /* margin-right: 100%; */
+        transform: translateX(-100%);
+    }
+    80% {
+        transform: translateX(2.5%);
+    }
+    100% {
+        margin-right: 0%;
+        transform: translateX(0%);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        transform: translateX(100%);
+    }
+    80% {
+        transform: translateX(-2.5%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
