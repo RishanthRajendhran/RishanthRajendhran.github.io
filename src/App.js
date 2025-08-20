@@ -9,7 +9,6 @@ import BlogIndex from './pages/BlogIndex';
 import BlogPost from './pages/BlogPost';
 import CV from './pages/CV';
 import './App.css';
-import Publications from './pages/Publications';
 
 function App() {
   return (

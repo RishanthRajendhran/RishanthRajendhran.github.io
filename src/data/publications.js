@@ -2,7 +2,7 @@ export const publications = [
   {
     title: "VeriFastScore: Speeding up long-form factuality evaluation",
     authors: ["Rishanth Rajendhran","Amir Zadeh","Matthew Sarte","Chuan Li", "Mohit Iyyer"],
-    conf: "Preprint",
+    conf: "EMNLP Findings 2025",
     id: "arXiv:2505.16973",
     link: "https://arxiv.org/abs/2505.16973",
     github: "https://github.com/RishanthRajendhran/VeriFastScore",

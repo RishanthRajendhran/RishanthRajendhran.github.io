@@ -1,4 +1,5 @@
 import React from 'react';
+import { personal }     from '../data/personal';
 import { publications } from '../data/publications';
 
 export default function Publications() {
