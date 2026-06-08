@@ -1,6 +1,7 @@
 // src/data/personal.js
 export const personal = {
   name: "Rishanth Rajendhran",
+  phonetic: "riː-ʃɑːnθ",
   authorInTamil: "ரிஷாந்த் ராஜேந்திரன்",
   location: "College Park, Maryland, US",
   hometown: "Chennai, Tamil Nadu, India",

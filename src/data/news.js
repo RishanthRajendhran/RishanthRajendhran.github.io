@@ -1,5 +1,5 @@
 export const news = [
-  { title:"VeriFastScore accepted to EMNLP Findings 2025!", date:"2025-08-20", link:"#"},
+  { title:"VeriFastScore accepted to Findings of EMNLP 2025!", date:"2025-08-20", link:"#"},
   { title:"Moved to UMD", date:"2025-01-15", link:"#"},
   { title:"Started PhD in CS at UMass Amherst", date:"2024-09-1", link:"#"},
   { title:"Graduated from Utah with an MSCS degree", date:"2024-05-03", link:"#"},

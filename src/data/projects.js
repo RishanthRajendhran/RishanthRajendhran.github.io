@@ -1,6 +1,11 @@
 // src/data/projects.js
 
 export const projects = [
+    {
+    title: "POLARIS",
+    desc: "POLARIS: Guiding Small Models to Write Long Stories",
+    link: "https://github.com/RishanthRajendhran/POLARIS",
+  },
   {
     title: "VeriFastScore",
     desc: "VeriFastScore: Speeding up long-form factuality evaluation",

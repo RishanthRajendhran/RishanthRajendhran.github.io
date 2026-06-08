@@ -31,7 +31,7 @@ export default function Home() {
               <strong> 👋 Hey, there! </strong>
               <strong> 🙏 Vanakkam! </strong>
               <br/><br/>
-              My name is Rishanth and I am a first-year Ph.D. student in Computer Science at the University of Maryland, advised by Prof. <a href="https://www.cs.umd.edu/~miyyer/" target="_blank"> Mohit Iyyer </a>. 
+              My name is Rishanth and I am a second-year Ph.D. student in Computer Science at the University of Maryland, advised by Prof. <a href="https://www.cs.umd.edu/~miyyer/" target="_blank"> Mohit Iyyer </a>. 
               <br/><br/>
               My research focuses on analysing and improving generations by large language models, particularly long-context reasoning, factuality, and reinforcement learning from human/AI feedback. 
               <br/><br/>
