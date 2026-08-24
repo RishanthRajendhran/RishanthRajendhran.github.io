@@ -1,4 +1,6 @@
 export const news = [
+  { title:"POLARIS accepted to EMNLP Main Conference 2026!", date:"2026-08-20", link:"#"},
+  { title:"StoryScope accepted to COLM 2026!", date:"2025-07-08", link:"#"},
   { title:"VeriFastScore accepted to Findings of EMNLP 2025!", date:"2025-08-20", link:"#"},
   { title:"Moved to UMD", date:"2025-01-15", link:"#"},
   { title:"Started PhD in CS at UMass Amherst", date:"2024-09-1", link:"#"},

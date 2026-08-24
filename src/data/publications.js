@@ -2,7 +2,7 @@ export const publications = [
   {
     title: "POLARIS: Guiding Small Models to Write Long Stories",
     authors: ["Rishanth Rajendhran", "Jenna Russel", "Mohit Iyyer", "John Wieting"],
-    conf: "Preprint",
+    conf: "EMNLP Main Conference 2026",
     id: "arXiv:2606.04095",
     link: "https://arxiv.org/abs/2606.04095",
     github: "https://github.com/RishanthRajendhran/POLARIS",
@@ -11,7 +11,7 @@ export const publications = [
   {
     title: "StoryScope: Investigating idiosyncrasies in AI fiction",
     authors: ["Jenna Russel", "Rishanth Rajendhran", "Chau Minh Pham", "Mohit Iyyer", "John Wieting"],
-    conf: "Preprint",
+    conf: "COLM 2026",
     id: "arXiv:2604.03136",
     link: "https://arxiv.org/abs/2604.03136",
     github: "https://github.com/jenna-russell/storyscope",
