@@ -1,5 +1,14 @@
 export const publications = [
   {
+    title: "IdeaLens: Detecting AI Ideas in Long-form Writing",
+    authors: ["Rishanth Rajendhran", "Minjoon Choi", "Jenna Russel", "Ramya Namuduri", "Deniz Bölöni-Turgut", "Marzena Karpinska", "John Wieting", "Mohit Iyyer"],
+    conf: "Preprint",
+    id: "arXiv:2610.06778",
+    link: "https://arxiv.org/abs/2610.06778",
+    github: "https://github.com/RishanthRajendhran/IdeaLens",
+    date: "2026-10-6"
+  },
+  {
     title: "POLARIS: Guiding Small Models to Write Long Stories",
     authors: ["Rishanth Rajendhran", "Jenna Russel", "Mohit Iyyer", "John Wieting"],
     conf: "EMNLP Main Conference 2026",

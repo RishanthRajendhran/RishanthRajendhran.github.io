@@ -1,7 +1,12 @@
 // src/data/projects.js
 
 export const projects = [
-    {
+  {
+    title: "IdeaLens",
+    desc: "IdeaLens: Detecting AI Ideas in Long-form Writing",
+    link: "https://github.com/RishanthRajendhran/IdeaLens",
+  },
+  {
     title: "POLARIS",
     desc: "POLARIS: Guiding Small Models to Write Long Stories",
     link: "https://github.com/RishanthRajendhran/POLARIS",
