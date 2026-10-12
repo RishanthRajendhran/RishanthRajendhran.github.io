@@ -16,6 +16,7 @@ export default function NavBar() {
           <NavLink to="/projects">Projects</NavLink>
           <NavLink to="/blog">Blog</NavLink>
           <NavLink to="/cv">CV</NavLink>
+          <a href="/lens-vs-sol/index.html" target="_blank" rel="noopener noreferrer">Sol vs IdeaLens</a>
           <ThemeToggle/>
         </div>
       </div>
