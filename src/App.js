@@ -8,6 +8,7 @@ import Projects from './pages/Projects';
 import BlogIndex from './pages/BlogIndex';
 import BlogPost from './pages/BlogPost';
 import CV from './pages/CV';
+import IdeaDetection from './pages/IdeaDetection';
 import './App.css';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
             <Route path="/blog" element={<BlogIndex/>}/>
             <Route path="/blog/:slug" element={<BlogPost/>}/>
             <Route path="/cv" element={<CV/>}/>
+            <Route path="/idea-detection" element={<IdeaDetection/>}/>
           </Routes>
         </main>
       </Router>
