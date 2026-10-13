@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Idea Detection</title>
+<style>
+:root { --bg:#f6f7f9; --panel:#fff; --ink:#1c2230; --muted:#5d6678; --line:#dfe3ea; --accent:#2a62c9; --err:#c0392b; }
+@media (prefers-color-scheme: dark) { :root { --bg:#12161f; --panel:#1a2030; --ink:#e6eaf2; --muted:#9aa4b8; --line:#2c3448; --accent:#6f9cf0; --err:#ec7b6b; color-scheme:dark; } }
+* { box-sizing:border-box; }
+html, body { height:100%; margin:0; }
+body { background:var(--bg); color:var(--ink); font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif; display:flex; flex-direction:column; }
+#gate { margin:auto; padding:2rem; background:var(--panel); border:1px solid var(--line); border-radius:10px; width:min(92vw,360px); }
+#gate h1 { margin:0 0 .25rem; font-size:1.3rem; }
+#gate p { margin:0 0 1rem; color:var(--muted); font-size:.9rem; }
+input, button { font:inherit; padding:.5rem .7rem; border-radius:6px; border:1px solid var(--line); background:var(--panel); color:var(--ink); }
+#gate input { width:100%; margin-bottom:.6rem; }
+button { cursor:pointer; }
+button.primary { background:var(--accent); color:#fff; border-color:var(--accent); width:100%; }
+button:disabled { opacity:.6; cursor:default; }
+#err { color:var(--err); font-size:.9rem; min-height:1.3em; margin:.5rem 0 0; }
+#viewer { display:none; flex:1; flex-direction:column; min-height:0; }
+header { display:flex; gap:.5rem; align-items:center; padding:.5rem .75rem; border-bottom:1px solid var(--line); background:var(--panel); }
+header strong { margin-right:.5rem; }
+header button[aria-pressed="true"] { background:var(--accent); color:#fff; border-color:var(--accent); }
+header a { margin-left:auto; color:var(--accent); font-size:.9rem; }
+iframe { flex:1; width:100%; border:0; display:none; min-height:0; }
+iframe.on { display:block; }
+</style>
+</head>
+<body>
+<form id="gate">
+  <h1>Idea Detection</h1>
+  <p>This page is password protected.</p>
+  <input id="pw" type="password" placeholder="Password" autocomplete="current-password" autofocus>
+  <button id="go" class="primary" type="submit">Unlock</button>
+  <p id="err" role="alert"></p>
+</form>
+<div id="viewer">
+  <header><strong>Idea Detection</strong><span id="tabs"></span><a id="pop" target="_blank" rel="noopener">Open tab alone ↗</a></header>
+  <div id="frames" style="display:contents"></div>
+</div>
+<script>
+// Must match scripts/encrypt-idea-detection.js
+const ITERATIONS = 600000;
+const PAGES = [
+  { id: 'sol', label: 'Sol vs IdeaLens', file: 'sol-vs-idealens.enc' },
+  { id: 'twicetold', label: 'TwiceTold Judge Comparison', file: 'twicetold.enc' },
+];
+const $ = id => document.getElementById(id);
+
+async function decrypt(buf, password) {
+  const d = new Uint8Array(buf);
+  const material = await crypto.subtle.importKey('raw', new TextEncoder().encode(password), 'PBKDF2', false, ['deriveKey']);
+  const key = await crypto.subtle.deriveKey(
+    { name: 'PBKDF2', salt: d.slice(0, 16), iterations: ITERATIONS, hash: 'SHA-256' },
+    material, { name: 'AES-GCM', length: 256 }, false, ['decrypt']);
+  return crypto.subtle.decrypt({ name: 'AES-GCM', iv: d.slice(16, 28) }, key, d.slice(28));
+}
+
+function show(urls) {
+  const tabs = $('tabs'), frames = $('frames');
+  function select(id) {
+    PAGES.forEach(p => {
+      $('f-' + p.id).classList.toggle('on', p.id === id);
+      $('t-' + p.id).setAttribute('aria-pressed', p.id === id);
+    });
+    $('pop').href = urls[id];
+  }
+  PAGES.forEach(p => {
+    const b = document.createElement('button');
+    b.id = 't-' + p.id; b.textContent = p.label; b.onclick = () => select(p.id);
+    tabs.appendChild(b);
+    const f = document.createElement('iframe');
+    f.id = 'f-' + p.id; f.title = p.label; f.src = urls[p.id];
+    frames.appendChild(f);
+  });
+  $('gate').style.display = 'none';
+  $('viewer').style.display = 'flex';
+  select(PAGES[0].id);
+}
+
+$('gate').addEventListener('submit', async e => {
+  e.preventDefault();
+  const pw = $('pw').value;
+  if (!pw) return;
+  $('go').disabled = true; $('go').textContent = 'Decrypting…'; $('err').textContent = '';
+  try {
+    const urls = {};
+    for (const p of PAGES) {
+      let res;
+      try { res = await fetch(p.file); if (!res.ok) throw 0; } catch { throw new Error('load'); }
+      urls[p.id] = URL.createObjectURL(new Blob([await decrypt(await res.arrayBuffer(), pw)], { type: 'text/html' }));
+    }
+    show(urls);
+  } catch (err) {
+    $('err').textContent = err.message === 'load' ? 'Could not load the pages.' : 'Incorrect password.';
+    $('go').disabled = false; $('go').textContent = 'Unlock';
+  }
+});
+</script>
+</body>
+</html>
