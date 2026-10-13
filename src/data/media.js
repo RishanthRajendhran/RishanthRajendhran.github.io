@@ -1,0 +1,29 @@
+export const media = [
+  {
+    outlet: "Nature (News)",
+    author: "Elizabeth Gibney",
+    title: "Is this idea from AI or humans? A detector claims it can tell.",
+    link: "https://www.nature.com/articles/d41586-026-03247-0",
+    date: "Oct 2026",
+    project: "IdeaLens",
+    kind: "Interview",
+  },
+  {
+    outlet: "Science (News)",
+    author: "Jeffrey Brainard",
+    title: "Did an AI or a human write that paper? New detector decides by examining its ideas.",
+    link: "https://www.science.org/content/article/did-ai-or-human-write-paper-new-detector-decides-examining-its-ideas",
+    date: "Oct 2026",
+    project: "IdeaLens",
+    kind: "Interview",
+  },
+  {
+    outlet: "404 Media",
+    author: "Matthew Gault",
+    title: "AI Fiction Is Easy to Detect Because It's Stupid and Bad, Research Finds.",
+    link: "https://www.404media.co/ai-fiction-is-easy-to-detect-because-its-stupid-and-bad-research-finds/",
+    date: "Jul 2026",
+    project: "StoryScope",
+    kind: "Coverage",
+  },
+];

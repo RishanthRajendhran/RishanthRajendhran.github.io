@@ -7,6 +7,7 @@ import Publications from './pages/Publications';
 import Projects from './pages/Projects';
 import BlogIndex from './pages/BlogIndex';
 import BlogPost from './pages/BlogPost';
+import Media from './pages/Media';
 import CV from './pages/CV';
 import './App.css';
 
@@ -22,6 +23,7 @@ function App() {
             <Route path="/projects" element={<Projects/>}/>
             <Route path="/blog" element={<BlogIndex/>}/>
             <Route path="/blog/:slug" element={<BlogPost/>}/>
+            <Route path="/media" element={<Media/>}/>
             <Route path="/cv" element={<CV/>}/>
           </Routes>
         </main>

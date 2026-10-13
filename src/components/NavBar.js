@@ -15,6 +15,7 @@ export default function NavBar() {
           <NavLink to="/publications">Publications</NavLink>
           <NavLink to="/projects">Projects</NavLink>
           <NavLink to="/blog">Blog</NavLink>
+          <NavLink to="/media">Media</NavLink>
           <NavLink to="/cv">CV</NavLink>
           <a href="/idea-detection/" target="_blank" rel="noopener noreferrer">Idea Detection</a>
           <ThemeToggle/>

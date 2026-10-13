@@ -1,6 +1,7 @@
 export const news = [
   {"title":"Interviewed by Nature Journal about IdeaLens", link:"https://www.nature.com/articles/d41586-026-03247-0", date:"2026-10-13"},
   {title:"Interviewed by Science Journal about IdeaLens!", link:"https://www.science.org/content/article/did-ai-or-human-write-paper-new-detector-decides-examining-its-ideas", date:"2026-10-12"},
+  {title:"IdeaLens and ProseLens is live at ideadetector.ai", link:"https://ideadetector.ai", date:"2026-10-06"},
   { title:"POLARIS accepted to EMNLP Main Conference 2026!", date:"2026-08-20", link:"#"},
   { title:"StoryScope accepted to COLM 2026!", date:"2025-07-08", link:"#"},
   { title:"VeriFastScore accepted to Findings of EMNLP 2025!", date:"2025-08-20", link:"#"},
