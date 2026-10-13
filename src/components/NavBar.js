@@ -16,7 +16,7 @@ export default function NavBar() {
           <NavLink to="/projects">Projects</NavLink>
           <NavLink to="/blog">Blog</NavLink>
           <NavLink to="/cv">CV</NavLink>
-          <NavLink to="/idea-detection">Idea Detection</NavLink>
+          <a href="/idea-detection/" target="_blank" rel="noopener noreferrer">Idea Detection</a>
           <ThemeToggle/>
         </div>
       </div>
