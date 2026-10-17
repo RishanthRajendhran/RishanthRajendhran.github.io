@@ -14,9 +14,13 @@ if (!pw) { console.error('Set IDEA_PW'); process.exit(1); }
 const pages = [
   { src: path.join(os.homedir(), 'Downloads/frontier_vs_lens_all_instances.html'), out: 'sol-vs-idealens.enc' },
   { src: path.join(os.homedir(), 'Downloads/TwiceTold Judge Comparison.html'), out: 'twicetold.enc' },
+  { src: path.join(os.homedir(), 'Downloads/v7 vs Joint Explanations.html'), out: 'v7-vs-joint.enc' },
 ];
+// Optional: pass output names to encrypt only those (e.g. `... v7-vs-joint.enc`)
+const only = process.argv.slice(2);
 
 for (const { src, out } of pages) {
+  if (only.length && !only.includes(out)) continue;
   const salt = crypto.randomBytes(16);
   const iv = crypto.randomBytes(12);
   const key = crypto.pbkdf2Sync(pw, salt, ITERATIONS, 32, 'sha256');
