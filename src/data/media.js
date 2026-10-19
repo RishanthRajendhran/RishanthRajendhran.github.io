@@ -2,11 +2,11 @@ export const media = [
   {
     outlet: "BBC World Service",
     author: "William Chalk",
-    title: "News segment on IdeaLens (broadcast 16 Oct 2026)",
+    title: "News segment on IdeaLens",
     link: "", // TODO: add BBC page URL and official segment title
     audio: "/media/bbc-world-service-idealens.mp3",
     audioNotice: "Audio © BBC. Reproduced here for reference and non-commercial, informational purposes only, with credit to BBC World Service and journalist William Chalk. All rights remain with the BBC.",
-    date: "Oct 2026",
+    date: "16 Oct 2026",
     project: "IdeaLens",
     kind: "Coverage",
   },

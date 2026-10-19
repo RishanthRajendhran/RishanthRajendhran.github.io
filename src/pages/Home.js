@@ -1,5 +1,6 @@
 // src/pages/Home.js
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   FaEnvelope,
   FaTwitter,
@@ -61,7 +62,9 @@ export default function Home() {
               {news.map(n => (
                 <li key={n.title}>
                   <span className="news-date">{n.date}</span>{' '}
-                  <a href={n.link} target="_blank">{n.title}</a>
+                  {n.link.startsWith('/')
+                    ? <Link to={n.link}>{n.title}</Link>
+                    : <a href={n.link} target="_blank">{n.title}</a>}
                 </li>
               ))}
             </ul>

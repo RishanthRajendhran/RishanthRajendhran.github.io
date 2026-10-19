@@ -1,4 +1,5 @@
 export const news = [
+  {title:"IdeaLens covered by BBC World Service", link:"/media", date:"2026-10-16"},
   {"title":"Interviewed by Nature Journal about IdeaLens", link:"https://www.nature.com/articles/d41586-026-03247-0", date:"2026-10-13"},
   {title:"Interviewed by Science Journal about IdeaLens!", link:"https://www.science.org/content/article/did-ai-or-human-write-paper-new-detector-decides-examining-its-ideas", date:"2026-10-12"},
   {title:"IdeaLens and ProseLens is live at ideadetector.ai", link:"https://ideadetector.ai", date:"2026-10-06"},
